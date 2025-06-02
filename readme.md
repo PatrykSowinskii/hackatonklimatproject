@@ -1,1 +1,1 @@
-"oto mój pomysł:  bot znajdujący zamienniki środków transportu"
+"oto mój pomysł:  wszechstronny bot na temat ekologii"
