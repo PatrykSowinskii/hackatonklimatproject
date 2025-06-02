@@ -87,20 +87,6 @@ async def quiz(ctx):
         # Obsługa przypadku, gdy użytkownik nie odpowie na czas
         await ctx.send("⏰ Czas minął! Spróbuj ponownie.")
 
-# Komenda: ranking użytkowników – pokazuje top eko-uczestników quizów
-@bot.command(name='ranking')
-async def ranking(ctx):
-    if not user_points:
-        await ctx.send("📊 Nikt jeszcze nie zdobył punktów.")
-        return
-
-    # Posortuj użytkowników wg liczby punktów
-    sorted_points = sorted(user_points.items(), key=lambda x: x[1], reverse=True)
-
-    # Stwórz czytelną listę rankingową
-    ranking_text = '\n'.join([f"{i+1}. {user} – {points} punktów" for i, (user, points) in enumerate(sorted_points)])
-
-    await ctx.send(f"🏆 Ranking ekologów:\n{ranking_text}")
 
 # Komenda: wyświetla listę dostępnych komend
 @bot.command(name='pomoc')
@@ -111,8 +97,8 @@ async def pomoc(ctx):
 !przypomnij – przypomnienie o eko-zachowaniach  
 !porada – losowa porada ekologiczna  
 !quiz – quiz ekologiczny  
-!ranking – ranking użytkowników z punktami  
 !pomoc – pokazuje tę listę
 """)
 
-bot.run('TU_WSTAW_TOKEN_BOTA')
+
+bot.run('token')
